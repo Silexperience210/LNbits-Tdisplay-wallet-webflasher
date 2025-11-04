@@ -8,19 +8,19 @@
       "chipFamily": "ESP32-S3",
       "parts": [
         {
-          "path": "bootloader.bin",
+          "path": "firmware/bootloader.bin",
           "offset": 0
         },
         {
-          "path": "partitions.bin",
+          "path": "firmware/partitions.bin",
           "offset": 32768
         },
         {
-          "path": "boot_app0__1_.bin",
+          "path": "firmware/boot_app0__1_.bin",
           "offset": 57344
         },
         {
-          "path": "lnbits_wallet_ultra_modern.bin",
+          "path": "firmware/lnbits_wallet_ultra_modern.bin",
           "offset": 65536
         }
       ]
