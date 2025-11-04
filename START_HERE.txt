@@ -1,0 +1,263 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║         ⚡ LNBITS ESP32 WALLET - BITCOIN MAXI EDITION ⚡                  ║
+║                                                                           ║
+║                          🚀 START HERE 🚀                                 ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+👋 BIENVENUE ! Tous vos fichiers sont prêts !
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                      📍 OÙ SUIS-JE ? QUE FAIRE ?                         ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Vous avez téléchargé un package COMPLET avec :
+✅ Page web flasher Bitcoin Maxi
+✅ Firmware Arduino 100% debuggé
+✅ Guides débutants pas à pas
+✅ Scripts d'automatisation
+✅ Documentation complète
+
+TOTAL : 22 fichiers organisés et prêts !
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    🎯 3 FAÇONS DE DÉMARRER                               ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                          ┃
+┃  🤖 OPTION 1 : MODE AUTOMATIQUE (Recommandé)                           ┃
+┃                                                                          ┃
+┃  ⏱️  Temps : 5 minutes                                                   ┃
+┃  👤 Niveau : Débutant total                                             ┃
+┃                                                                          ┃
+┃  ÉTAPES :                                                                ┃
+┃  1. Double-cliquez sur :                                                 ┃
+┃     • Windows    → setup.bat                                            ┃
+┃     • Mac/Linux  → setup.sh                                             ┃
+┃                                                                          ┃
+┃  2. Entrez vos infos quand demandé :                                    ┃
+┃     • Username GitHub                                                    ┃
+┃     • Email                                                              ┃
+┃     • Nom du repo                                                        ┃
+┃                                                                          ┃
+┃  3. Le script fait TOUT automatiquement !                               ┃
+┃                                                                          ┃
+┃  4. Créez le repo sur GitHub : https://github.com/new                   ┃
+┃                                                                          ┃
+┃  5. Dans le terminal : git push -u origin main                          ┃
+┃                                                                          ┃
+┃  6. GitHub Pages → Activez dans Settings                                ┃
+┃                                                                          ┃
+┃  ✅ FINI ! Votre site est en ligne ! 🎉                                 ┃
+┃                                                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                          ┃
+┃  ⚡ OPTION 2 : MODE RAPIDE (Si vous connaissez un peu Git)             ┃
+┃                                                                          ┃
+┃  ⏱️  Temps : 3 minutes                                                   ┃
+┃  👤 Niveau : Intermédiaire                                              ┃
+┃                                                                          ┃
+┃  FICHIER : Ouvrez QUICKSTART.md                                         ┃
+┃                                                                          ┃
+┃  Vous y trouverez les 7 commandes essentielles à copier-coller.        ┃
+┃                                                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                          ┃
+┃  📚 OPTION 3 : MODE APPRENTISSAGE (Pour tout comprendre)               ┃
+┃                                                                          ┃
+┃  ⏱️  Temps : 30 minutes                                                  ┃
+┃  👤 Niveau : Débutant qui veut apprendre                                ┃
+┃                                                                          ┃
+┃  FICHIER : Ouvrez GUIDE_GITHUB_DEBUTANT.md                             ┃
+┃                                                                          ┃
+┃  Guide complet étape par étape avec explications détaillées.            ┃
+┃  Vous apprendrez Git/GitHub de A à Z.                                   ┃
+┃                                                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                      📁 FICHIERS IMPORTANTS                              ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+🎯 COMMENCEZ PAR UN DE CES FICHIERS :
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ START_HERE.txt          ← VOUS ÊTES ICI !                   │
+  │ LISTE_FICHIERS.txt      ← Vue d'ensemble ASCII              │
+  │ INDEX.md                ← Navigation complète               │
+  │ QUICKSTART.md           ← Guide rapide 5 min                │
+  │ GUIDE_GITHUB_DEBUTANT.md ← Guide complet pas à pas          │
+  └─────────────────────────────────────────────────────────────┘
+
+📂 FICHIERS ESSENTIELS POUR GITHUB :
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ index.html              ← Page web flasher                  │
+  │ manifest.json           ← Config ESP Web Tools              │
+  │ README.md               ← Doc principale                    │
+  │ LICENSE                 ← Licence MIT                       │
+  │ .gitignore             ← Config Git                         │
+  └─────────────────────────────────────────────────────────────┘
+
+🔧 CODE SOURCE :
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ src/lnbits_wallet_ULTRA_MODERN_v2.ino  ← Firmware Arduino   │
+  │ src/README.md           ← Guide compilation                 │
+  └─────────────────────────────────────────────────────────────┘
+
+📖 GUIDES TECHNIQUES :
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ FIRMWARE_GUIDE.md       ← Générer les .bin                 │
+  │ DEPLOYMENT_GUIDE.md     ← Setup GitHub avancé              │
+  │ PACKAGE_SUMMARY.md      ← Vue d'ensemble projet            │
+  │ STRUCTURE.md            ← Arborescence complète            │
+  └─────────────────────────────────────────────────────────────┘
+
+🤖 SCRIPTS AUTOMATIQUES :
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ setup.bat               ← Windows                           │
+  │ setup.sh                ← Mac/Linux                         │
+  └─────────────────────────────────────────────────────────────┘
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    🗂️  STRUCTURE DES DOSSIERS                            ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+  lnbits-esp32-wallet/
+  │
+  ├── 📄 Fichiers web (index.html, manifest.json, README.md)
+  ├── 📄 Guides (QUICKSTART, INDEX, etc.)
+  ├── 🤖 Scripts (setup.bat, setup.sh)
+  │
+  ├── 📁 firmware/        ← Vos binaires .bin ici
+  ├── 📁 src/             ← Code Arduino .ino ici
+  ├── 📁 docs/            ← Docs techniques
+  └── 📁 assets/          ← Preview + screenshots
+
+  Voir STRUCTURE.md pour l'arborescence complète !
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    ⚠️  FICHIERS À GÉNÉRER                                ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Vous devrez générer ces fichiers VOUS-MÊME :
+
+  ❌ firmware/bootloader.bin
+  ❌ firmware/partitions.bin
+  ❌ firmware/boot_app0.bin
+  ❌ firmware/lnbits_wallet_ultra_modern.bin
+
+Comment ? → Lisez FIRMWARE_GUIDE.md
+
+En attendant, le web flasher fonctionnera quand même !
+Vous pourrez ajouter les binaires plus tard.
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    ✅ CHECKLIST RAPIDE                                   ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Avant de push sur GitHub :
+
+  ☐ Git installé ? (git --version)
+  ☐ Compte GitHub créé ?
+  ☐ Tous les fichiers téléchargés ?
+  ☐ Choisi votre méthode (1, 2 ou 3) ?
+
+Après le push :
+
+  ☐ Repository créé sur GitHub ?
+  ☐ Fichiers pushés avec succès ?
+  ☐ GitHub Pages activé ?
+  ☐ Site accessible en ligne ?
+  ☐ Topics ajoutés au repo ?
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    🆘 BESOIN D'AIDE ?                                    ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+  PROBLÈME                           → SOLUTION
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Je ne sais pas par où commencer   → Lancez setup.bat/sh
+  Git n'est pas installé             → git-scm.com/downloads
+  Erreur lors du push                → GUIDE_GITHUB_DEBUTANT.md
+  Erreur de compilation              → FIRMWARE_GUIDE.md
+  Je veux comprendre le code         → src/README.md
+  Je veux customiser l'écran         → docs/README_ULTRA_MODERN.md
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    🎯 ACTION IMMÉDIATE                                   ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+  FAITES ÇA MAINTENANT :
+
+  1️⃣  Ouvrez un terminal / invite de commandes
+
+  2️⃣  Naviguez vers le dossier :
+      cd /chemin/vers/lnbits-esp32-wallet
+
+  3️⃣  Lancez un script :
+
+      Windows    →  setup.bat
+      Mac/Linux  →  chmod +x setup.sh && ./setup.sh
+
+  4️⃣  Suivez les instructions à l'écran
+
+  5️⃣  Créez le repo sur GitHub
+
+  6️⃣  git push -u origin main
+
+  7️⃣  Activez GitHub Pages
+
+  8️⃣  🎉 CÉLÉBREZ ! Votre projet est en ligne !
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    📞 SUPPORT & RESSOURCES                               ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+  📖 Documentation Git      → git-scm.com/doc
+  🌐 GitHub Guides          → guides.github.com
+  💬 Questions ?            → Ouvrir une issue GitHub
+  🐦 Partager ?             → Twitter #LightningNetwork #Bitcoin
+
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                         🎉 VOUS ÊTES PRÊT ! 🎉                           ║
+║                                                                           ║
+║          ⚡ Stack Sats. Stay Humble. HODL Hard. ⚡                       ║
+║                                                                           ║
+║                  Votre wallet Lightning attend !                         ║
+║                                                                           ║
+║              Lancez setup.bat ou setup.sh MAINTENANT !                   ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+              WAGMI 💎🙌 | FEW 🧠 | GM ☀️ | HODL 🚀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+      Made with 🧡 by Bitcoin Maxis | Open Source MIT License
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

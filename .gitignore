@@ -1,0 +1,28 @@
+﻿# Build files
+.pio/
+.vscode/
+build/
+*.o
+*.a
+
+# Arduino
+*.hex
+*.eep
+*.elf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.bak
+*~
+
+# Secrets
+secrets.h
+config_local.h
+
+# Binaries (except firmware folder)
+*.bin
+!firmware/*.bin

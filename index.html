@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ LNbits Wallet Flasher - Bitcoin Maxi Edition</title>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bitcoin-orange: #F7931A;
+            --bitcoin-dark: #1A1A1A;
+            --bitcoin-darker: #0D0D0D;
+            --lightning-purple: #9C27B0;
+            --laser-cyan: #00F0FF;
+            --laser-red: #FF0050;
+            --success-green: #00FF41;
+            --gold: #FFD700;
+            --text-white: #FFFFFF;
+            --text-gray: #B0B0B0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bitcoin-darker);
+            color: var(--text-white);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Bitcoin animated background */
+        body::before {
+            content: '₿';
+            position: fixed;
+            font-size: 600px;
+            top: -200px;
+            right: -200px;
+            color: rgba(247, 147, 26, 0.03);
+            z-index: 0;
+            animation: rotate 30s linear infinite;
+            font-weight: 700;
+        }
+
+        body::after {
+            content: '⚡';
+            position: fixed;
+            font-size: 400px;
+            bottom: -150px;
+            left: -150px;
+            color: rgba(156, 39, 176, 0.03);
+            z-index: 0;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.03; transform: scale(1); }
+            50% { opacity: 0.06; transform: scale(1.1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(247, 147, 26, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(247, 147, 26, 0.6), 0 0 60px rgba(247, 147, 26, 0.4); }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(247, 147, 26, 0.5));
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--bitcoin-orange), var(--gold), var(--laser-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .meme-text {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--bitcoin-orange);
+            font-size: 1.2em;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(247, 147, 26, 0.05);
+            border: 2px solid rgba(247, 147, 26, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--bitcoin-orange);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        /* Cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(13, 13, 13, 0.9));
+            border: 2px solid var(--bitcoin-orange);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out both;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--bitcoin-orange), var(--gold), var(--laser-cyan));
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(247, 147, 26, 0.3);
+            border-color: var(--gold);
+        }
+
+        .card-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(247, 147, 26, 0.5));
+        }
+
+        .card h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: var(--bitcoin-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features li {
+            padding: 10px 0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features li::before {
+            content: '⚡';
+            color: var(--bitcoin-orange);
+            font-size: 1.2em;
+        }
+
+        /* Flash Button Container */
+        .flash-container {
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.1), rgba(255, 215, 0, 0.1));
+            border: 3px solid var(--bitcoin-orange);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flash-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(247, 147, 26, 0.05) 10px,
+                rgba(247, 147, 26, 0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            to { transform: translate(50px, 50px); }
+        }
+
+        .flash-container h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--bitcoin-orange);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .flash-container p {
+            font-size: 1.2em;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ESP Web Tools Button Styling */
+        esp-web-install-button {
+            position: relative;
+            z-index: 1;
+        }
+
+        esp-web-install-button button {
+            background: linear-gradient(135deg, var(--bitcoin-orange), var(--gold)) !important;
+            color: var(--bitcoin-dark) !important;
+            border: none !important;
+            padding: 20px 50px !important;
+            font-size: 1.5em !important;
+            font-weight: 700 !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3) !important;
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+
+        esp-web-install-button button:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 40px rgba(247, 147, 26, 0.5) !important;
+        }
+
+        /* Instructions */
+        .instructions {
+            background: rgba(26, 26, 26, 0.5);
+            border: 2px solid rgba(247, 147, 26, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .instructions h3 {
+            font-size: 2em;
+            color: var(--bitcoin-orange);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .instructions ol {
+            color: var(--text-gray);
+            line-height: 2;
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: rgba(255, 0, 80, 0.1);
+            border: 2px solid var(--laser-red);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            color: var(--text-gray);
+        }
+
+        .warning::before {
+            content: '⚠️ ';
+            font-size: 1.5em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top: 2px solid rgba(247, 147, 26, 0.2);
+        }
+
+        .footer-memes {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .meme-badge {
+            background: rgba(247, 147, 26, 0.1);
+            border: 2px solid var(--bitcoin-orange);
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--bitcoin-orange);
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .meme-badge:hover {
+            background: rgba(247, 147, 26, 0.2);
+            transform: scale(1.1);
+        }
+
+        .github-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--text-gray);
+            border-radius: 10px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--bitcoin-orange);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .flash-container {
+                padding: 30px 20px;
+            }
+
+            esp-web-install-button button {
+                padding: 15px 30px !important;
+                font-size: 1.2em !important;
+            }
+        }
+
+        /* Laser eyes effect */
+        .laser-eyes {
+            position: relative;
+            display: inline-block;
+        }
+
+        .laser-eyes::before,
+        .laser-eyes::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--laser-red), transparent);
+            top: 50%;
+            animation: laser 2s ease-in-out infinite;
+        }
+
+        .laser-eyes::before {
+            left: 100%;
+        }
+
+        .laser-eyes::after {
+            right: 100%;
+            transform: scaleX(-1);
+        }
+
+        @keyframes laser {
+            0%, 100% { opacity: 0.3; width: 30px; }
+            50% { opacity: 1; width: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo laser-eyes">⚡₿</div>
+            <h1>LNbits Wallet Flasher</h1>
+            <p class="tagline">Stack Sats. Lightning Fast. Ultra Degen.</p>
+            <p class="meme-text">> NOT YOUR KEYS, NOT YOUR COINS</p>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">21M</div>
+                <div class="stat-label">Max Supply</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">⚡∞</div>
+                <div class="stat-label">Lightning Speed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">HODL Mode</div>
+            </div>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h2>Ultra Modern Display</h2>
+                <p>Glassmorphism design with real-time stats, animated balance, and cyberpunk aesthetics.</p>
+                <ul class="features">
+                    <li>Real-time balance tracking</li>
+                    <li>Transaction history (100 TX)</li>
+                    <li>IN/OUT volume analysis</li>
+                    <li>Animated charts & graphs</li>
+                    <li>Pulsating status indicators</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h2>Lightning Network</h2>
+                <p>Connect to your LNbits instance and monitor your Lightning wallet in style.</p>
+                <ul class="features">
+                    <li>LNbits API integration</li>
+                    <li>Instant payment updates</li>
+                    <li>Secure HTTPS connection</li>
+                    <li>Web configuration portal</li>
+                    <li>Auto-refresh every 30s</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Flash Section -->
+        <div class="flash-container">
+            <h3>🔥 Flash Your ESP32 Now</h3>
+            <p>One-click installation. No Arduino IDE required. Pure degen technology.</p>
+            
+            <esp-web-install-button manifest="./manifest.json">
+                <button slot="activate">⚡ FLASH FIRMWARE ⚡</button>
+            </esp-web-install-button>
+
+            <div class="warning">
+                <strong>HODL UP!</strong> Make sure your ESP32 is connected via USB and you're using Chrome, Edge, or Opera browser.
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>📋 How to Flash (EZ Mode)</h3>
+            <ol>
+                <li><strong>Connect ESP32</strong> - Plug your board into USB port</li>
+                <li><strong>Click Flash Button</strong> - Hit that orange button above like you're buying the dip</li>
+                <li><strong>Select Port</strong> - Choose your ESP32 from the list</li>
+                <li><strong>Wait for Upload</strong> - Takes ~2 minutes (perfect for checking BTC price)</li>
+                <li><strong>Configure WiFi</strong> - Connect to "LNbits-Config" (password: 12345678)</li>
+                <li><strong>Open Portal</strong> - Go to http://192.168.4.1 and enter your LNbits details</li>
+                <li><strong>Stack Sats</strong> - Watch your balance in ultra-modern style 🚀</li>
+            </ol>
+
+            <h3 style="margin-top: 40px;">🔧 Supported Hardware</h3>
+            <ul class="features" style="margin-left: 0;">
+                <li>LILYGO T-Display S3 (recommended for degens)</li>
+                <li>ESP32 with TFT display (320x240)</li>
+                <li>Any ESP32-S3 with SPI TFT screen</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-memes">
+                <div class="meme-badge">HODL 💎🙌</div>
+                <div class="meme-badge">FEW 🧠</div>
+                <div class="meme-badge">WAGMI 🚀</div>
+                <div class="meme-badge">GM ☀️</div>
+                <div class="meme-badge">NGMI 🤡</div>
+                <div class="meme-badge">21M 🔢</div>
+            </div>
+
+            <a href="https://github.com/yourusername/lnbits-esp32-wallet" class="github-link" target="_blank">
+                ⭐ Star on GitHub
+            </a>
+
+            <p style="margin-top: 30px; color: var(--text-gray);">
+                Built with 🧡 by Bitcoin Maxis<br>
+                <small style="color: var(--text-gray); opacity: 0.5;">
+                    Open Source • MIT License • Not Financial Advice DYOR NFA
+                </small>
+            </p>
+
+            <p style="margin-top: 20px; font-family: 'JetBrains Mono', monospace; color: var(--bitcoin-orange); font-size: 0.9em;">
+                "Fix the money, fix the world" - Bitcoin Proverb
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
